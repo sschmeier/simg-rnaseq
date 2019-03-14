@@ -5,13 +5,13 @@ A [Singularity Hub](https://www.singularity-hub.org/) definition for rnaseq work
 If [Singularity](http://singularity.lbl.gov) is installed locally, the container can be build (needs root access) locally like this:
 
 ```bash
-sudo singularity build simg-rnaseq.simg Singularity
+sudo singularity build simg-rnaseq.simg Singularity.201903
 ```
 
 The container can alos be downloaded from [Singularity Hub](https://www.singularity-hub.org/) without root access to the local machine like this:
 
 ```bash
-singularity pull --name "simg-rnaseq.simg" sschmeier/simg-rnaseq:latest 
+singularity pull --name "simg-rnaseq.simg" sschmeier/simg-rnaseq:201903
 ```
 
 Then, it can be used, e.g.:
