@@ -1,0 +1,8 @@
+#library(clusterProfiler)
+library(org.Mm.eg.db)
+library(org.Hs.eg.db)
+#library(DESeq2)
+library(edgeR)
+library(tximport)
+library(IHW)
+sessionInfo()

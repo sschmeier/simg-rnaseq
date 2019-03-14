@@ -1,0 +1,24 @@
+Bootstrap: docker
+From: continuumio/miniconda3:4.5.12
+
+%labels
+   AUTHOR schmeier@tuta.io
+
+%environment
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# This sets global environment variables for anything run within the container
+  export PATH="/opt/conda/bin:$PATH"
+  unset CONDA_DEFAULT_ENV
+  export ANACONDA_HOME=/opt/conda
+
+
+%post
+   export PATH=/opt/conda/bin:$PATH
+   conda update --yes -q conda 
+   echo "We add conda channels."
+   conda config --add channels defaults
+   conda config --add channels conda-forge
+   conda config --add channels bioconda
+   echo "We install tools."
+   conda install --yes r-samr bioconductor-deseq2 bioconductor-edger r-readr bioconductor-limma bioconductor-ihw=1.10.0 bioconductor-tximport=1.10.0 bioconductor-biocparallel bioconductor-clusterprofiler bioconductor-org.hs.eg.db bioconductor-org.mm.eg.db bioconductor-gseabase pandas numpy star=2.6.1d multiqc=1.7 bbmap=38.22 samtools=1.9 colorama rseqc=3.0.0 salmon=0.13.1 gffutils=0.9
+   conda clean --index-cache --tarballs --packages --yes
