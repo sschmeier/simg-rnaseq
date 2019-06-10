@@ -5,7 +5,7 @@ A [Singularity](http://singularity.lbl.gov) definition for rnaseq workflow, avai
 If [Singularity](http://singularity.lbl.gov) is installed locally, the container can be build (needs root access) locally like this:
 
 ```bash
-sudo singularity build simg-rnaseq.simg Singularity.201903
+sudo singularity build simg-rnaseq.201906.simg Singularity.201906 > build.log 2>&1
 ```
 
 The container can also be downloaded from [Singularity Hub](https://www.singularity-hub.org/) without root access to the local machine like this:
